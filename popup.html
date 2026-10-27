@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base44 Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <p class="eyebrow">Base44</p>
+          <h1>Code Downloader</h1>
+        </div>
+        <span class="badge" id="tabStatus">...</span>
+      </header>
+
+      <label class="field">
+        <span>Project ID</span>
+        <input id="appId" placeholder="e.g. 6a503aea6890e6682802f76c">
+      </label>
+
+      <div class="actions">
+        <button id="detectBtn" type="button">Detect project</button>
+        <button id="downloadBtn" type="button" class="primary">Download ZIP</button>
+      </div>
+
+      <section class="advanced">
+        <button id="toggleAdvanced" type="button" class="link">Emergency mode: file list</button>
+        <div id="advancedPanel" hidden>
+          <p>
+            If Base44 blocks the code endpoint, the extension reads files through the editor.
+            Detect the paths from the file tree (or paste them, one per line), then download.
+            Keep this popup open while it runs.
+          </p>
+          <div class="actions">
+            <button id="detectPathsBtn" type="button">Detect paths</button>
+            <button id="downloadByPathsBtn" type="button">Download by paths</button>
+          </div>
+          <textarea id="paths" spellcheck="false" placeholder="src/App.jsx&#10;src/main.jsx&#10;package.json"></textarea>
+        </div>
+      </section>
+
+      <pre id="log" aria-live="polite"></pre>
+    </main>
+    <script src="zip.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

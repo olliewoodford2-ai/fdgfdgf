@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Base44 Code Downloader",
+  "version": "1.0.3",
+  "description": "Downloads the code of a Base44 project from the active tab as a ZIP file.",
+  "minimum_chrome_version": "102",
+  "action": {
+    "default_title": "Base44 Downloader",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://app.base44.com/*"
+  ]
+}
